@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: career-assessment-system
+  datasource:
+    url: jdbc:mysql://localhost:3306/career_assessment_db?allowMultiQueries=true&useSSL=false&serverTimezone=UTC&allowLoadLocal=true&allowPublicKeyRetrieval=true
+    username: root
+    password: kudhan@183
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-init-sql: "SET FOREIGN_KEY_CHECKS=0"
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        enable_lazy_load_no_trans: true
+        jdbc:
+          batch_size: 20
+          fetch_size: 50
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+      indent-output: true
+
+jwt:
+  secret: your-super-secret-key-change-this-in-production-with-a-long-random-string
+  expiration: 86400000
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+logging:
+  level:
+    root: INFO
+    com.careers.assessment: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
