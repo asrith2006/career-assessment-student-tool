@@ -1,0 +1,11 @@
+/* Test Specific Styles */
+.test-container .spinner {
+  display: block;
+  margin: 50px auto;
+}
+
+.test-container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #7f8c8d;
+}
